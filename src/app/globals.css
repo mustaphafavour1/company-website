@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  /* Ember Black — warm near-black charcoal base */
+  --color-ember-black: 19 15 12;
+  --color-ember-black-soft: 28 22 18;
+  /* Brasa — the glow of burning charcoal */
+  --color-brasa: 214 94 42;
+  --color-brasa-bright: 237 120 58;
+  /* Mango Gold — the fruit accent */
+  --color-mango: 227 163 51;
+  --color-mango-bright: 240 184 79;
+  /* Guanabana Cream — warm off-white for section breaks and body copy */
+  --color-guanabana: 240 231 215;
+  --color-guanabana-dim: 200 191 176;
+  /* Palm — deep tropical green, used sparingly for trust/certification marks */
+  --color-palm: 63 82 58;
+  --color-palm-bright: 111 143 95;
+}
+
+@theme inline {
+  --color-ember-black: rgb(var(--color-ember-black));
+  --color-ember-black-soft: rgb(var(--color-ember-black-soft));
+  --color-brasa: rgb(var(--color-brasa));
+  --color-brasa-bright: rgb(var(--color-brasa-bright));
+  --color-mango: rgb(var(--color-mango));
+  --color-mango-bright: rgb(var(--color-mango-bright));
+  --color-guanabana: rgb(var(--color-guanabana));
+  --color-guanabana-dim: rgb(var(--color-guanabana-dim));
+  --color-palm: rgb(var(--color-palm));
+  --color-palm-bright: rgb(var(--color-palm-bright));
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-inter);
+  --font-label: var(--font-plex-mono);
+}
+
+html {
+  background: rgb(var(--color-ember-black));
+  scroll-behavior: smooth;
+}
+
+body {
+  background: rgb(var(--color-ember-black));
+  color: rgb(var(--color-guanabana));
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: rgb(var(--color-brasa));
+  color: rgb(var(--color-ember-black));
+}
+
+/* Visible keyboard focus states, not just hover */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgb(var(--color-mango));
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
