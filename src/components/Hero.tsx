@@ -69,7 +69,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-[4%] pt-24">
+      <div className="relative z-10 w-full px-[4%] pt-24">
         <motion.p
           initial="hidden"
           animate="visible"

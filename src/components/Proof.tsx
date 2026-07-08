@@ -67,7 +67,7 @@ function StatTile({ stat, index }: { stat: Stat; index: number }) {
 export default function Proof() {
   return (
     <section id="proof" className="bg-ember-black-soft/40 py-28 md:py-36">
-      <div className="mx-auto grid max-w-7xl gap-14 px-[4%] md:grid-cols-2 md:gap-16">
+      <div className="grid w-full gap-14 px-[4%] md:grid-cols-2 md:gap-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

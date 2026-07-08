@@ -11,7 +11,7 @@ const links = [
 export default function Navbar() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-ember-black/80 backdrop-blur-md border-b border-guanabana/10">
-      <nav className="mx-auto max-w-7xl px-[4%] h-16 md:h-20 flex items-center justify-between">
+      <nav className="w-full px-[4%] h-16 md:h-20 flex items-center justify-between">
         <Link
           href="#top"
           className="font-display text-lg md:text-xl tracking-tight text-guanabana"

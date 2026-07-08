@@ -71,7 +71,7 @@ export default function Offering() {
       id="offering"
       className="relative bg-ember-black py-28 md:py-36"
     >
-      <div className="mx-auto max-w-7xl px-[4%]">
+      <div className="w-full px-[4%]">
         <motion.div
           initial="hidden"
           whileInView="visible"

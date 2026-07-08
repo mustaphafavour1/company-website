@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="border-t border-guanabana/10 bg-ember-black py-10">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 px-[4%] text-center">
+      <div className="flex w-full flex-col items-center gap-3 px-[4%] text-center">
         <p className="font-display text-lg text-guanabana">
           Tierra D&apos; Acogida SL
         </p>
