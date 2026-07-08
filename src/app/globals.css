@@ -16,6 +16,22 @@
   /* Palm — deep tropical green, used sparingly for trust/certification marks */
   --color-palm: 63 82 58;
   --color-palm-bright: 111 143 95;
+
+  /* Intertil d.o.o. palette — sugar/flour/logistics, light theme */
+  /* Sugar White — the base surface, evoking refined beet sugar */
+  --color-sugar-white: 250 250 248;
+  --color-sugar-white-dim: 240 240 236;
+  /* Asphalt — near-black text/ink, the road surface */
+  --color-asphalt: 24 27 32;
+  --color-asphalt-dim: 90 96 105;
+  /* Steel — the route/logistics accent */
+  --color-steel: 47 91 140;
+  --color-steel-bright: 63 116 173;
+  /* Wheat — the flour/grain accent */
+  --color-wheat: 176 122 46;
+  --color-wheat-bright: 199 145 63;
+  /* Mist — a step off white for section differentiation */
+  --color-mist: 228 232 234;
 }
 
 @theme inline {
@@ -33,6 +49,19 @@
   --font-display: var(--font-fraunces);
   --font-body: var(--font-inter);
   --font-label: var(--font-plex-mono);
+
+  --color-sugar-white: rgb(var(--color-sugar-white));
+  --color-sugar-white-dim: rgb(var(--color-sugar-white-dim));
+  --color-asphalt: rgb(var(--color-asphalt));
+  --color-asphalt-dim: rgb(var(--color-asphalt-dim));
+  --color-steel: rgb(var(--color-steel));
+  --color-steel-bright: rgb(var(--color-steel-bright));
+  --color-wheat: rgb(var(--color-wheat));
+  --color-wheat-bright: rgb(var(--color-wheat-bright));
+  --color-mist: rgb(var(--color-mist));
+
+  --font-intertil-display: var(--font-space-grotesk);
+  --font-intertil-label: var(--font-jetbrains-mono);
 }
 
 html {
@@ -46,6 +75,11 @@ body {
 .theme-tierra ::selection {
   background: rgb(var(--color-brasa));
   color: rgb(var(--color-ember-black));
+}
+
+.theme-intertil ::selection {
+  background: rgb(var(--color-steel));
+  color: rgb(var(--color-sugar-white));
 }
 
 /* Visible keyboard focus states, not just hover */
