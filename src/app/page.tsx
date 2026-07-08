@@ -16,6 +16,13 @@ const sites = [
       "Slovenian wholesale merchant of bulk beet sugar and industrial baking flour.",
     accent: "#2f5b8c",
   },
+  {
+    href: "/quelle-trade",
+    name: "Quelle Trade, Import Export d.o.o.",
+    blurb:
+      "Slovenian trade agency sourcing chickpeas, lentils, and dried fruit from Central Asia.",
+    accent: "#a84a2f",
+  },
 ];
 
 export default function SiteDirectory() {

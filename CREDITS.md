@@ -18,3 +18,12 @@ Real photography used on these sites, sourced from Wikimedia Commons under free 
 - `src/assets/intertil/offering-flour.jpg` — "Trockener Weizen (Hessen).jpg", CC0 (public domain). https://commons.wikimedia.org/wiki/File:Trockener_Weizen_(Hessen).jpg
 
 **Before real launch:** same note as above — real photography of Intertil's own trucks, warehouse, or product would beat stock here too, particularly for the hero.
+
+## Quelle Trade, Import Export d.o.o.
+
+- `src/assets/quelle-trade/hero-chickpeas.jpg` — "Kabuli Chana.jpg", CC0 (public domain). https://commons.wikimedia.org/wiki/File:Kabuli_Chana.jpg
+- `src/assets/quelle-trade/offering-chickpeas.jpg` — "Cicer arietinum (seeds).jpg", CC0 (public domain). https://commons.wikimedia.org/wiki/File:Cicer_arietinum_(seeds).jpg
+- `src/assets/quelle-trade/offering-lentils.jpg` — "Red lentils Gogreen.jpg", CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Red_lentils_Gogreen.jpg
+- `src/assets/quelle-trade/offering-driedfruit.jpg` — "Dried Apricots.jpg", CC0 (public domain). https://commons.wikimedia.org/wiki/File:Dried_Apricots.jpg
+
+**Before real launch:** real photography of Quelle Trade's own contracted farms in Uzbekistan and Kazakhstan would be far more persuasive than stock — this is literally the "direct farm contracts" story the site is telling.

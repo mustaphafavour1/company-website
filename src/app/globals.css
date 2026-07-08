@@ -32,6 +32,34 @@
   --color-wheat-bright: 199 145 63;
   /* Mist — a step off white for section differentiation */
   --color-mist: 228 232 234;
+
+  /* Quelle Trade palette — Silk Road spice trade, light warm theme */
+  /* Sand — the base surface, evoking desert and steppe */
+  --color-sand: 250 245 235;
+  --color-sand-dim: 240 231 213;
+  /* Ink — deep indigo-black text, evoking Silk Road indigo dye */
+  --color-ink: 32 29 46;
+  --color-ink-dim: 96 89 104;
+  /* Saffron — the spice accent */
+  --color-saffron: 199 146 47;
+  --color-saffron-bright: 217 168 74;
+  /* Terracotta — dried fruit and clay pottery accent */
+  --color-terracotta: 168 74 47;
+  --color-terracotta-bright: 196 96 64;
+
+  /* Agorastar palette — walnut orchard heritage, dark warm theme */
+  /* Walnut Dark — near-black warm wood base */
+  --color-walnut-dark: 26 20 16;
+  --color-walnut: 74 52 38;
+  /* Cream — warm ivory text */
+  --color-cream: 240 232 216;
+  --color-cream-dim: 196 186 168;
+  /* Olive — deep orchard green accent */
+  --color-olive: 90 102 62;
+  --color-olive-bright: 122 138 82;
+  /* Amber — warm honey accent */
+  --color-amber: 196 138 62;
+  --color-amber-bright: 216 162 89;
 }
 
 @theme inline {
@@ -62,6 +90,30 @@
 
   --font-intertil-display: var(--font-space-grotesk);
   --font-intertil-label: var(--font-jetbrains-mono);
+
+  --color-sand: rgb(var(--color-sand));
+  --color-sand-dim: rgb(var(--color-sand-dim));
+  --color-ink: rgb(var(--color-ink));
+  --color-ink-dim: rgb(var(--color-ink-dim));
+  --color-saffron: rgb(var(--color-saffron));
+  --color-saffron-bright: rgb(var(--color-saffron-bright));
+  --color-terracotta: rgb(var(--color-terracotta));
+  --color-terracotta-bright: rgb(var(--color-terracotta-bright));
+
+  --font-quelle-display: var(--font-cormorant);
+  --font-quelle-label: var(--font-space-mono);
+
+  --color-walnut-dark: rgb(var(--color-walnut-dark));
+  --color-walnut: rgb(var(--color-walnut));
+  --color-cream: rgb(var(--color-cream));
+  --color-cream-dim: rgb(var(--color-cream-dim));
+  --color-olive: rgb(var(--color-olive));
+  --color-olive-bright: rgb(var(--color-olive-bright));
+  --color-amber: rgb(var(--color-amber));
+  --color-amber-bright: rgb(var(--color-amber-bright));
+
+  --font-agora-display: var(--font-bitter);
+  --font-agora-label: var(--font-dm-mono);
 }
 
 html {
@@ -80,6 +132,16 @@ body {
 .theme-intertil ::selection {
   background: rgb(var(--color-steel));
   color: rgb(var(--color-sugar-white));
+}
+
+.theme-quelle ::selection {
+  background: rgb(var(--color-terracotta));
+  color: rgb(var(--color-sand));
+}
+
+.theme-agora ::selection {
+  background: rgb(var(--color-amber));
+  color: rgb(var(--color-walnut-dark));
 }
 
 /* Visible keyboard focus states, not just hover */
