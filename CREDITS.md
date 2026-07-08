@@ -27,3 +27,11 @@ Real photography used on these sites, sourced from Wikimedia Commons under free 
 - `src/assets/quelle-trade/offering-driedfruit.jpg` — "Dried Apricots.jpg", CC0 (public domain). https://commons.wikimedia.org/wiki/File:Dried_Apricots.jpg
 
 **Before real launch:** real photography of Quelle Trade's own contracted farms in Uzbekistan and Kazakhstan would be far more persuasive than stock — this is literally the "direct farm contracts" story the site is telling.
+
+## Agorastar
+
+- `src/assets/agorastar/hero-walnuts.jpg` — "Walnut in a basket.jpg", CC BY 4.0. https://commons.wikimedia.org/wiki/File:Walnut_in_a_basket.jpg
+- `src/assets/agorastar/offering-inshell.jpg` — cropped from the same "Walnut in a basket.jpg", CC BY 4.0.
+- `src/assets/agorastar/offering-kernels.jpg` — cropped from "A Walnut kernel up close.jpg", CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:A_Walnut_kernel_up_close.jpg
+
+**Before real launch:** real photography of Agorastar's own orchards, the actual family, and the actual processing facility would carry the "family heritage at European scale" story far better than stock — worth prioritizing here specifically since that contrast is the entire pitch.

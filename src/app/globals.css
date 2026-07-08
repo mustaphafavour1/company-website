@@ -113,7 +113,7 @@
   --color-amber-bright: rgb(var(--color-amber-bright));
 
   --font-agora-display: var(--font-bitter);
-  --font-agora-label: var(--font-dm-mono);
+  --font-agora-label: var(--font-ubuntu-mono);
 }
 
 html {

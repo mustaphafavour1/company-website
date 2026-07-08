@@ -23,6 +23,13 @@ const sites = [
       "Slovenian trade agency sourcing chickpeas, lentils, and dried fruit from Central Asia.",
     accent: "#a84a2f",
   },
+  {
+    href: "/agorastar",
+    name: "Agorastar",
+    blurb:
+      "Bulgarian processor and exporter of organic walnut kernels and in-shell walnuts.",
+    accent: "#c48a3e",
+  },
 ];
 
 export default function SiteDirectory() {
