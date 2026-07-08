@@ -36,17 +36,14 @@
 }
 
 html {
-  background: rgb(var(--color-ember-black));
   scroll-behavior: smooth;
 }
 
 body {
-  background: rgb(var(--color-ember-black));
-  color: rgb(var(--color-guanabana));
-  font-family: var(--font-body);
+  font-family: var(--font-body, var(--font-inter));
 }
 
-::selection {
+.theme-tierra ::selection {
   background: rgb(var(--color-brasa));
   color: rgb(var(--color-ember-black));
 }
@@ -56,7 +53,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid rgb(var(--color-mango));
+  outline: 2px solid currentColor;
   outline-offset: 3px;
   border-radius: 2px;
 }

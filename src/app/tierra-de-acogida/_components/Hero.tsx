@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Ship, ArrowRight } from "lucide-react";
 import emberImg from "@/assets/photos/hero-ember.jpg";
 import fruitImg from "@/assets/photos/hero-fruit.jpg";
+import { useLanguage } from "./i18n";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -16,6 +17,7 @@ const fadeUp = {
 };
 
 export default function Hero() {
+  const { t } = useLanguage();
   return (
     <section
       id="top"
@@ -77,7 +79,7 @@ export default function Hero() {
           variants={fadeUp}
           className="font-label text-xs md:text-sm tracking-[0.25em] text-guanabana-dim uppercase"
         >
-          Authentic Cuban Terroir
+          {t.hero.eyebrow}
         </motion.p>
 
         <motion.h1
@@ -87,9 +89,9 @@ export default function Hero() {
           variants={fadeUp}
           className="mt-5 font-display text-5xl leading-[1.05] sm:text-6xl md:text-7xl lg:text-8xl"
         >
-          <span className="block text-brasa-bright">Cuban fire,</span>
+          <span className="block text-brasa-bright">{t.hero.line1}</span>
           <span className="block italic text-mango-bright">
-            island-ripe fruit.
+            {t.hero.line2}
           </span>
         </motion.h1>
 
@@ -100,10 +102,7 @@ export default function Hero() {
           variants={fadeUp}
           className="mt-6 max-w-xl text-base md:text-lg text-guanabana/90"
         >
-          Exclusive logistics corridors carry hand-harvested premium
-          Caribbean charcoal and exotic fruits from Cuban soil to Europe&apos;s
-          most discerning tables and hearths — without ever losing their
-          origin.
+          {t.hero.subtitle}
         </motion.p>
 
         <motion.div
@@ -117,14 +116,14 @@ export default function Hero() {
             href="#contact"
             className="group inline-flex items-center gap-2 rounded-full bg-brasa px-6 py-3.5 text-sm font-semibold text-ember-black transition-colors hover:bg-brasa-bright"
           >
-            Request a Quote
+            {t.hero.ctaPrimary}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
           <a
             href="#offering"
             className="inline-flex items-center gap-2 rounded-full border border-guanabana/30 px-6 py-3.5 text-sm font-semibold text-guanabana transition-colors hover:border-mango hover:text-mango"
           >
-            See the Offering
+            {t.hero.ctaSecondary}
           </a>
         </motion.div>
       </div>
@@ -140,11 +139,9 @@ export default function Hero() {
           <Ship className="h-4 w-4" />
         </span>
         <span className="font-label text-xs leading-tight text-guanabana">
-          Direct Havana &#8646; Europe corridor
+          {t.hero.chipLine1}
           <br />
-          <span className="text-guanabana-dim">
-            Single-source. Fully traceable.
-          </span>
+          <span className="text-guanabana-dim">{t.hero.chipLine2}</span>
         </span>
       </motion.div>
     </section>

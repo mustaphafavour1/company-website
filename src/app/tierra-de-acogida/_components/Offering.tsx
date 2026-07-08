@@ -6,52 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Flame, Citrus, Check } from "lucide-react";
 import charcoalImg from "@/assets/photos/offering-charcoal.jpg";
 import fruitImg from "@/assets/photos/offering-fruit.jpg";
-
-type Category = {
-  key: string;
-  label: string;
-  icon: typeof Flame;
-  image: StaticImageData;
-  imageAlt: string;
-  headline: string;
-  description: string;
-  specs: string[];
-};
-
-const categories: Category[] = [
-  {
-    key: "charcoal",
-    label: "Cuban Charcoal",
-    icon: Flame,
-    image: charcoalImg,
-    imageAlt: "Hand-cut organic Cuban lump charcoal",
-    headline: "Slow-burned, hand-cut, and organic to the core.",
-    description:
-      "Marabú and hardwood lump charcoal, kiln-cut by hand in small batches — denser, longer-burning, and free of the fillers found in mass-market briquettes.",
-    specs: [
-      "Marabú lump charcoal (restaurant & grill grade)",
-      "Hardwood briquettes (retail & bulk packs)",
-      "Organic certified, no chemical binders",
-      "Custom bagging and private label available",
-    ],
-  },
-  {
-    key: "fruit",
-    label: "Tropical Fruit",
-    icon: Citrus,
-    image: fruitImg,
-    imageAlt: "Freshly harvested Cuban mangoes in a market crate",
-    headline: "Picked ripe, moved fast, landed fresh.",
-    description:
-      "Mango, guava, papaya, and plantain, hand-harvested at peak ripeness and routed through cold-chain logistics built specifically for this corridor.",
-    specs: [
-      "Mango, guava, papaya, plantain — seasonal availability",
-      "Hand-harvested, graded for export at origin",
-      "Cold-chain logistics, Havana to port of entry",
-      "Flexible volumes for retail and food-service buyers",
-    ],
-  },
-];
+import { useLanguage } from "./i18n";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -63,7 +18,28 @@ const fadeUp = {
 };
 
 export default function Offering() {
+  const { t } = useLanguage();
   const [active, setActive] = useState(0);
+
+  const categories = [
+    {
+      key: "charcoal",
+      label: t.offering.tabCharcoal,
+      icon: Flame,
+      image: charcoalImg as StaticImageData,
+      imageAlt: "Hand-cut organic Cuban lump charcoal",
+      ...t.offering.charcoal,
+    },
+    {
+      key: "fruit",
+      label: t.offering.tabFruit,
+      icon: Citrus,
+      image: fruitImg as StaticImageData,
+      imageAlt: "Freshly harvested Cuban mangoes in a market crate",
+      ...t.offering.fruit,
+    },
+  ];
+
   const current = categories[active];
 
   return (
@@ -81,16 +57,15 @@ export default function Offering() {
           className="mx-auto max-w-2xl text-center"
         >
           <p className="font-label text-xs md:text-sm tracking-[0.25em] text-guanabana-dim uppercase">
-            The Offering
+            {t.offering.eyebrow}
           </p>
           <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.1]">
-            <span className="text-brasa-bright">Two harvests,</span>{" "}
-            <span className="italic text-mango-bright">one corridor.</span>
+            <span className="text-brasa-bright">{t.offering.titleA}</span>{" "}
+            <span className="italic text-mango-bright">
+              {t.offering.titleB}
+            </span>
           </h2>
-          <p className="mt-5 text-guanabana/80">
-            Every shipment carries either the fire or the fruit of Cuba — never
-            a diluted middle ground. Choose a category to see what travels.
-          </p>
+          <p className="mt-5 text-guanabana/80">{t.offering.subtitle}</p>
         </motion.div>
 
         {/* Tabs */}

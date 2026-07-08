@@ -3,37 +3,42 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, animate } from "framer-motion";
 import { Leaf, Route, ShieldCheck, Users } from "lucide-react";
+import { useLanguage } from "./i18n";
 
-type Stat = {
+const statMeta = [
+  { value: 12, suffix: "+", icon: Leaf },
+  { value: 30, suffix: "+", icon: Users },
+  { value: 100, suffix: "%", icon: ShieldCheck },
+  { value: 1, suffix: "", icon: Route },
+];
+
+function StatTile({
+  value,
+  suffix,
+  label,
+  icon: Icon,
+  index,
+}: {
   value: number;
   suffix: string;
   label: string;
   icon: typeof Leaf;
-};
-
-const stats: Stat[] = [
-  { value: 12, suffix: "+", label: "Years sourcing direct from Cuba", icon: Leaf },
-  { value: 30, suffix: "+", label: "European partners served", icon: Users },
-  { value: 100, suffix: "%", label: "Hand-harvested & organic", icon: ShieldCheck },
-  { value: 1, suffix: "", label: "Exclusive corridor: Havana → Europe", icon: Route },
-];
-
-function StatTile({ stat, index }: { stat: Stat; index: number }) {
+  index: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.6 });
   const [display, setDisplay] = useState(0);
-  const Icon = stat.icon;
 
   useEffect(() => {
     if (!inView) return;
-    const controls = animate(0, stat.value, {
+    const controls = animate(0, value, {
       duration: 1.4,
       delay: index * 0.1,
       ease: [0.22, 1, 0.36, 1],
       onUpdate: (v) => setDisplay(Math.round(v)),
     });
     return () => controls.stop();
-  }, [inView, stat.value, index]);
+  }, [inView, value, index]);
 
   return (
     <motion.div
@@ -49,7 +54,7 @@ function StatTile({ stat, index }: { stat: Stat; index: number }) {
       </span>
       <p className="mt-5 font-display text-4xl md:text-5xl text-guanabana">
         {display}
-        <span className="text-mango-bright">{stat.suffix}</span>
+        <span className="text-mango-bright">{suffix}</span>
       </p>
       <span
         className="mt-3 block h-px bg-gradient-to-r from-brasa via-mango to-transparent"
@@ -59,12 +64,15 @@ function StatTile({ stat, index }: { stat: Stat; index: number }) {
           transition: "transform 0.9s cubic-bezier(0.22,1,0.36,1) 0.3s",
         }}
       />
-      <p className="mt-3 text-sm text-guanabana/75">{stat.label}</p>
+      <p className="mt-3 text-sm text-guanabana/75">{label}</p>
     </motion.div>
   );
 }
 
 export default function Proof() {
+  const { t } = useLanguage();
+  const stats = statMeta.map((m, i) => ({ ...m, label: t.proof.stats[i] }));
+
   return (
     <section id="proof" className="bg-ember-black-soft/40 py-28 md:py-36">
       <div className="grid w-full gap-14 px-[4%] md:grid-cols-2 md:gap-16">
@@ -76,28 +84,29 @@ export default function Proof() {
           className="flex flex-col justify-center"
         >
           <p className="font-label text-xs md:text-sm tracking-[0.25em] text-guanabana-dim uppercase">
-            Why Us
+            {t.proof.eyebrow}
           </p>
           <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.1]">
-            <span className="text-brasa-bright">Proof, not</span>
+            <span className="text-brasa-bright">{t.proof.titleA}</span>
             <br />
-            <span className="italic text-mango-bright">promises.</span>
+            <span className="italic text-mango-bright">{t.proof.titleB}</span>
           </h2>
-          <p className="mt-5 max-w-md text-guanabana/80">
-            A new website doesn&apos;t make a business credible — a track
-            record does. This is what stands behind every shipment that
-            leaves Cuba under our name.
-          </p>
+          <p className="mt-5 max-w-md text-guanabana/80">{t.proof.body1}</p>
           <p className="mt-6 max-w-md text-sm text-guanabana-dim">
-            Every shipment moves under full phytosanitary and customs
-            documentation for EU import, with single-source traceability
-            from harvest to port of entry.
+            {t.proof.body2}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-2 gap-4 sm:gap-5">
           {stats.map((stat, i) => (
-            <StatTile stat={stat} index={i} key={stat.label} />
+            <StatTile
+              value={stat.value}
+              suffix={stat.suffix}
+              icon={stat.icon}
+              label={stat.label}
+              index={i}
+              key={stat.label}
+            />
           ))}
         </div>
       </div>
